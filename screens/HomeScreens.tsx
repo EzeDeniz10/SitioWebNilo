@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import CustomCard from '../components/CustomCard';
 import cardsData, { CardItem } from '../data/cardsData';
-
-// Importa o define RootStackParamList
-import { RootStackParamList } from '../navigation/types'; // Ajusta la ruta según corresponda
+import ParallaxScrollView from '../components/ParallaxScrollView';
+import { RootStackParamList } from '../navigation/types';
 
 // Definir la tipificación de la navegación
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'HomeScreen'>;
@@ -25,11 +24,11 @@ const HomeScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={cardsData}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <CustomCard {...item} onPress={() => goToDetails(item)} />}
-      />
+      <ParallaxScrollView>
+        {cardsData.map((item) => (
+          <CustomCard key={item.id} {...item} onPress={() => goToDetails(item)} />
+        ))}
+      </ParallaxScrollView>
     </View>
   );
 };
