@@ -14,7 +14,7 @@ export default function ParallaxScrollView({ children }) {
       )}
     >
       <Animated.Image
-        source={require('../assets/images/background.jpg')}
+        source={require('../assets/images/background.jpg')} 
         style={[
           styles.image,
           {
@@ -22,7 +22,7 @@ export default function ParallaxScrollView({ children }) {
               {
                 translateY: scrollY.interpolate({
                   inputRange: [0, 300],
-                  outputRange: [0, -150], // Efecto parallax
+                  outputRange: [0, -150], 
                   extrapolate: 'clamp',
                 }),
               },

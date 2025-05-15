@@ -1,34 +1,13 @@
-import React from 'react';
-import { ScrollView, View, StyleSheet } from 'react-native';
-import Navbar from '../components/Navbar';
-import CustomCard from '../components/CustomCard';
-import cardsData from '../data/cardsData'; 
+import { Link } from "expo-router";
+import { View, Text, Button } from "react-native";
 
-export default function Home() {
+export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Navbar />
-      <ScrollView contentContainerStyle={styles.scroll}>
-        {cardsData.map((item) => (
-          <CustomCard
-            key={item.id} 
-            title={item.title}
-            description={item.description}
-            image={item.image}
-            onPress={() => console.log(`Abriendo ${item.title}`)}
-          />
-        ))}
-      </ScrollView>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text style={{ fontSize: 24, fontWeight: "bold" }}>Pantalla Principal</Text>
+      <Link href="/details">
+        <Button title="Ir a Detalles" />
+      </Link>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  scroll: {
-    paddingTop: 60,
-    padding: 16,
-  },
-});

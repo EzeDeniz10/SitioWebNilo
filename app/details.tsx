@@ -1,9 +1,14 @@
-import { View, Text } from 'react-native';
+import { View, Text, Button } from "react-native";
+import { useRouter } from "expo-router";
 
 export default function DetailsScreen() {
+  const router = useRouter();
+
   return (
-    <View>
-      <Text>Pantalla de detalles</Text>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text style={{ fontSize: 24, fontWeight: "bold" }}>Pantalla de Detalles</Text>
+      <Text>Esta es una pantalla de prueba.</Text>
+      <Button title="Volver a Inicio" onPress={() => router.back()} />
     </View>
   );
 }
