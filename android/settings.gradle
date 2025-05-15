@@ -1,0 +1,26 @@
+pluginManagement {
+  def reactNativeGradlePlugin = new File(
+    providers.exec {
+      workingDir(rootDir)
+      commandLine("node", "--print", "require.resolve('@react-native/gradle-plugin/package.json', { paths: [require.resolve('react-native/package.json')] })")
+    }.standardOutput.asText.get().trim()
+  ).getParentFile().absolutePath
+  includeBuild(reactNativeGradlePlugin)
+
+  def expoPluginPath = new File(
+    providers.exec {
+      workingDir(rootDir)
+      commandLine("node", "--print", "require.resolve('expo/package.json')")
+    }.standardOutput.asText.get().trim()
+  ).toPath().resolveSibling("expo-modules-core/android/expo-gradle-plugin").toFile()
+  includeBuild(expoPluginPath)
+
+  repositories {
+    gradlePluginPortal()
+    google()
+    mavenCentral()
+  }
+}
+
+rootProject.name = "SitioNiloBase"
+include(":app")

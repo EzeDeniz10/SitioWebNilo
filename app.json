@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "scheme": "SitioNilo",
+    "name": "SitioNilo",
+    "slug": "SitioNilo",
+    "version": "1.0.0",
+    "sdkVersion": "53.0.0",
+    "platforms": ["ios", "android"],
+    "jsEngine": "hermes",
+    "experimental": {
+      "bridgeless": false
+    },
+    "plugins": ["expo-router"],
+    "assetBundlePatterns": ["**/*"],
+    "extra": {
+      "linking": {
+        "prefixes": ["SitioNilo://"],
+        "config": {
+          "screens": {
+            "index": "",
+            "details": "details"
+          }
+        }
+      }
+    }
+  }
+}
