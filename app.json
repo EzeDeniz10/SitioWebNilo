@@ -5,7 +5,7 @@
     "slug": "SitioNilo",
     "version": "1.0.0",
     "sdkVersion": "53.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": ["ios", "android", "web"],
     "jsEngine": "hermes",
     "experimental": {
       "bridgeless": false
