@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, View, Text, Button } from "react-native";
+ import { Dimensions, StyleSheet, View, Text, Button } from "react-native";
 import { router } from "expo-router";
 
 const { width, height } = Dimensions.get("window"); // Obtiene dimensiones de pantalla
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
     fontSize: width * 0.05, // Tamaño de fuente proporcional al ancho de pantalla
     color: "#fff",
   },
-});
+}); 

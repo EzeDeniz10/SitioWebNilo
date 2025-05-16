@@ -1,23 +1,23 @@
 import React from 'react';
-import { Pressable, ImageBackground, StyleSheet, Text } from 'react-native';
+import { Pressable, ImageBackground, StyleSheet, Text} from 'react-native';
 
 interface CustomCardProps {
   title: string;
   description: string;
-  image: any;
+  image: { uri: string };
   onPress: () => void;
 }
 
-const CustomCard: React.FC<CustomCardProps> = ({ title, image, onPress }) => {
+const CustomCard: React.FC<CustomCardProps> = ({ title, description, image, onPress }) => {
   return (
     <Pressable onPress={onPress} style={styles.card}>
       <ImageBackground source={image} style={styles.image}>
         <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text> 
       </ImageBackground>
     </Pressable>
   );
 };
-
 const styles = StyleSheet.create({
   card: {
     marginBottom: 16,
@@ -33,6 +33,11 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  description: {
+    color: '#fff',
+    fontSize: 12,
+    marginTop: 4,
   },
 });
 

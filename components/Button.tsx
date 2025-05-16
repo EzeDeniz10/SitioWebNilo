@@ -18,7 +18,9 @@ export default function Button({ title, onPress, disabled }: Props) {
         pressed && !disabled && styles.pressed,
       ] as ViewStyle[]}
     >
-      <Text style={[styles.text, disabled && styles.textDisabled]}>{title}</Text>
+      <Text style={[styles.text, disabled && styles.textDisabled]}>
+        {title}
+      </Text>
     </Pressable>
   );
 }
