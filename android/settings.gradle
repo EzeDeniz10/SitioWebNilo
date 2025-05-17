@@ -22,5 +22,5 @@ pluginManagement {
   }
 }
 
-rootProject.name = "SitioNiloBase"
+rootProject.name = 'SitioNilo'
 include(":app")

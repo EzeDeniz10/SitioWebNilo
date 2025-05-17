@@ -1,4 +1,4 @@
-package com.sitionilo.base
+package com.anonymous.SitioNilo
 
 import android.app.Application
 import android.content.res.Configuration

@@ -1,3 +1,17 @@
 {
-  "extends": "expo/tsconfig.base"
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "jsx": "react-native",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "target": "esnext"
+  },
+  "include": ["src", "react-native-declarations.d.ts"],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }

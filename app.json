@@ -5,16 +5,26 @@
     "slug": "SitioNilo",
     "version": "1.0.0",
     "sdkVersion": "53.0.0",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "jsEngine": "hermes",
     "experimental": {
       "bridgeless": false
     },
-    "plugins": ["expo-router"],
-    "assetBundlePatterns": ["**/*"],
+    "plugins": [
+      "expo-router"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "extra": {
       "linking": {
-        "prefixes": ["SitioNilo://"],
+        "prefixes": [
+          "SitioNilo://"
+        ],
         "config": {
           "screens": {
             "index": "",
@@ -22,6 +32,9 @@
           }
         }
       }
+    },
+    "android": {
+      "package": "com.anonymous.SitioNilo"
     }
   }
 }
